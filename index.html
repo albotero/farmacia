@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia Especial</title>
+    <link rel="stylesheet" href="./assets/css/fonts.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Menu -->
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-staff-snake"></i>
+        <h1>Farmacia Especial</h1>
+      </div>
+      <i class="fa-solid fa-bars"></i>
+      <nav class="menu hidden">
+        <ul>
+          <li><button class="menu-item" onclick="showSection('home')">Inicio</button></li>
+          <li><button class="menu-item" onclick="showSection('products')">Productos</button></li>
+          <li><button class="menu-item" onclick="showSection('deals')">Ofertas</button></li>
+          <li><button class="menu-item" onclick="showSection('contact')">Contacto</button></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Main container - Each section will be shown with javascript -->
+    <main class="main-container">
+      <section id="home"></section>
+      <section id="products">products</section>
+      <section id="deals"></section>
+      <section id="contact"></section>
+    </main>
+    <!-- Filter -->
+    <aside class="filter">filter</aside>
+    <!-- Pages -->
+    <aside class="pages">pages</aside>
+    <!-- Footer -->
+    <footer class="footer">footer</footer>
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/49e51bd767.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+  </body>
+</html>
