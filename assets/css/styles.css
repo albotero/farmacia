@@ -51,9 +51,9 @@ body {
   background-color: var(--color-cornflower-blue);
   color: var(--color-light);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1rem;
 }
 
 .logo {
@@ -62,15 +62,51 @@ body {
   gap: 0.5rem;
   font-family: Playwrite_AT;
   font-style: italic;
+  padding: 1rem;
 }
 
 .header i {
-  font-size: var(--font-2xl);
+  font-size: var(--font-xl);
 }
 
 .logo h1 {
   margin: 0;
+  font-size: var(--font-lg);
   line-height: var(--font-xl);
+}
+
+.menu-icon {
+  transition: ease 1s;
+  padding: 1rem;
+}
+
+.menu-icon.selected {
+  color: var(--color-uranian-blue);
+  transform: rotate(-90deg);
+}
+
+.menu {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.menu-item {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  border-bottom: 1px solid var(--color-light);
+  width: 100%;
+  padding: 0.75rem;
 }
 
 .main-container {
@@ -79,6 +115,27 @@ body {
 
 .filter {
   grid-area: filter;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 1rem 2rem;
+}
+
+.filter p {
+  margin: 0;
+}
+
+#filter-select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-royal-purple);
+  padding: 0 1rem 0.5rem;
+  font-family: DM_Sans, sans-serif;
+  font-size: var(--font-md);
+  min-width: 250px;
+  text-align: center;
 }
 
 .pages {

@@ -14,7 +14,7 @@
         <i class="fa-solid fa-staff-snake"></i>
         <h1>Farmacia Especial</h1>
       </div>
-      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars menu-icon"></i>
       <nav class="menu hidden">
         <ul>
           <li><button class="menu-item" onclick="showSection('home')">Inicio</button></li>
@@ -32,7 +32,15 @@
       <section id="contact"></section>
     </main>
     <!-- Filter -->
-    <aside class="filter">filter</aside>
+    <aside class="filter">
+      <i class="fa-solid fa-filter"></i>
+      <p>Ordenar por:</p>
+      <select id="filter-select">
+        <option value="price">Precio</option>
+        <option value="name">Nombre</option>
+        <option value="category">Categoría</option>
+      </select>
+    </aside>
     <!-- Pages -->
     <aside class="pages">pages</aside>
     <!-- Footer -->
