@@ -30,22 +30,36 @@
     <!-- Main container - Each section will be shown with javascript -->
     <main class="main-container">
       <section id="home">home</section>
-      <section id="products" class="hidden">products</section>
+      <section id="products" class="hidden">
+        <!-- Products -->
+        <div class="products-container">
+          <div class="card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5hXiY75Nke_x0qKZWdUmAP_HX-sJskfgHtA&s"
+              alt=""
+              class="card-image"
+            />
+            <h4 class="card-title">Rivaroxaban</h4>
+            <p class="card-price">$3.000</p>
+            <a href="#" class="card-button">Ver más</a>
+          </div>
+        </div>
+        <!-- Filter -->
+        <aside class="filter">
+          <i class="fa-solid fa-filter"></i>
+          <p>Ordenar por:</p>
+          <select id="filter-select">
+            <option value="price">Precio</option>
+            <option value="name">Nombre</option>
+            <option value="category">Categoría</option>
+          </select>
+        </aside>
+        <!-- Pages -->
+        <aside class="pages">pages</aside>
+      </section>
       <section id="deals" class="hidden">deals</section>
       <section id="contact" class="hidden">contact</section>
     </main>
-    <!-- Filter -->
-    <aside class="filter">
-      <i class="fa-solid fa-filter"></i>
-      <p>Ordenar por:</p>
-      <select id="filter-select">
-        <option value="price">Precio</option>
-        <option value="name">Nombre</option>
-        <option value="category">Categoría</option>
-      </select>
-    </aside>
-    <!-- Pages -->
-    <aside class="pages">pages</aside>
     <!-- Footer -->
     <footer class="footer">
       <p class="social">
