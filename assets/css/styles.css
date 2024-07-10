@@ -6,16 +6,17 @@ html {
 }
 
 :root {
-  --color-pale-dogwood: #d5c6c3;
+  --color-pale-dogwood: #eee6e4;
   --color-eerie-black: #1c1c1cff;
   --color-uranian-blue: #a0ddffff;
   --color-cornflower-blue: #7189ffff;
   --color-royal-purple: #624cabff;
   --color-light: #f3f3f3;
-  --color-medium: #727873;
+  --color-medium: #828883;
+  --color-dark-medium: #5c5454;
   --color-dark: #131313;
-  --font-xs: 0.8rem;
-  --font-sm: 1rem;
+  --font-xs: 1rem;
+  --font-sm: 1.3rem;
   --font-md: 1.6rem;
   --font-lg: 2rem;
   --font-xl: 2.6rem;
@@ -153,12 +154,11 @@ body {
     "card-image card-image card-image card-image"
     ". . . ."
     ". card-title card-price ."
-    ". card-desc card-desc ."
+    ". card-desc card-price-discount ."
     ". . . ."
     ". card-button card-button .";
   row-gap: 0.3rem;
   padding-bottom: 1.5rem;
-  align-items: center;
   font-family: Nunito, sans-serif;
 }
 
@@ -176,6 +176,23 @@ body {
 
 .card-price {
   grid-area: card-price;
+  color: var(--color-dark-medium);
+  font-weight: 500;
+  justify-self: end;
+  align-self: end;
+}
+
+.card-price-discount {
+  grid-area: card-price-discount;
+  display: flex;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #f07c4a;
+}
+
+.card-price-discount .full-price {
+  text-decoration: line-through;
+  font-size: var(--font-sm);
   color: var(--color-medium);
 }
 
