@@ -151,14 +151,19 @@ body {
   flex-grow: 1;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1rem 1fr auto 1rem;
+  grid-template-columns: 1.2rem 1fr auto 1.2rem;
+  grid-template-rows: auto 0.7rem auto auto 0.7rem auto;
   grid-template-areas:
     "card-image card-image card-image card-image"
+    ". . . ."
     ". card-title card-price ."
+    ". card-desc card-desc ."
+    ". . . ."
     ". card-button card-button .";
-  row-gap: 1rem;
+  row-gap: 0.3rem;
   padding-bottom: 1.5rem;
   align-items: center;
+  font-family: Nunito, sans-serif;
 }
 
 .card-image {
@@ -176,6 +181,11 @@ body {
 .card-price {
   grid-area: card-price;
   color: var(--color-medium);
+}
+
+.card-desc {
+  grid-area: card-desc;
+  opacity: 0.8;
 }
 
 .card-button {
