@@ -20,19 +20,19 @@
       <i class="fa-solid fa-bars menu-icon"></i>
       <nav class="menu hidden">
         <ul>
-          <li><button class="menu-item" onclick="showSection('home')">Inicio</button></li>
-          <li><button class="menu-item" onclick="showSection('products')">Productos</button></li>
-          <li><button class="menu-item" onclick="showSection('deals')">Ofertas</button></li>
-          <li><button class="menu-item" onclick="showSection('contact')">Contacto</button></li>
+          <li><button class="menu-item home selected">Inicio</button></li>
+          <li><button class="menu-item products">Productos</button></li>
+          <li><button class="menu-item deals">Ofertas</button></li>
+          <li><button class="menu-item contact">Contacto</button></li>
         </ul>
       </nav>
     </header>
     <!-- Main container - Each section will be shown with javascript -->
     <main class="main-container">
-      <section id="home"></section>
-      <section id="products">products</section>
-      <section id="deals"></section>
-      <section id="contact"></section>
+      <section id="home">home</section>
+      <section id="products" class="hidden">products</section>
+      <section id="deals" class="hidden">deals</section>
+      <section id="contact" class="hidden">contact</section>
     </main>
     <!-- Filter -->
     <aside class="filter">

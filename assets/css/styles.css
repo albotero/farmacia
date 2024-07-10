@@ -25,6 +25,10 @@ html {
   display: none;
 }
 
+.selected {
+  color: var(--color-uranian-blue) !important;
+}
+
 /* Mobile view */
 
 body {
@@ -81,7 +85,6 @@ body {
 }
 
 .menu-icon.selected {
-  color: var(--color-uranian-blue);
   transform: rotate(-90deg);
 }
 
@@ -107,6 +110,10 @@ body {
   border-bottom: 1px solid var(--color-light);
   width: 100%;
   padding: 0.75rem;
+}
+
+.menu-item:active {
+  color: var(--color-uranian-blue);
 }
 
 .main-container {
