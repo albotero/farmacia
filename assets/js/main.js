@@ -4,7 +4,8 @@ let menuIcon,
   menu,
   menuShown = false,
   pages,
-  currentPage = 0
+  currentPage = 0,
+  filter = "id"
 
 const toggleMobileMenu = () => {
   menuShown = !menuShown
@@ -48,7 +49,18 @@ const populatePages = () => {
   })
 }
 
+const sortProducts = () =>
+  PRODUCTS.sort((a, b) => {
+    const valA = filter === "price" ? a.price * (1 - (a.discount / 100 || 0)) : a[filter] || 0
+    const valB = filter === "price" ? b.price * (1 - (b.discount / 100 || 0)) : b[filter] || 0
+    if (filter === "discount") return valB - valA
+    if (valA < valB) return -1
+    if (valA > valB) return 1
+    return 0
+  })
+
 const populateProducts = (start, count) => {
+  sortProducts()
   document.querySelector(".products-container").innerHTML = PRODUCTS.slice(start, start + count)
     .map(
       ({ id, title, desc, price, discount }) => `
@@ -88,6 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add listeners
   menuIcon.addEventListener("click", toggleMobileMenu)
   Object.entries(pages).forEach(([_, el]) => el.addEventListener("click", showSection))
+  document.getElementById("filter-select").addEventListener("change", (event) => {
+    filter = event.target.value
+    populatePages()
+  })
   // Populate products
   populatePages()
 })
