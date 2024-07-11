@@ -40,6 +40,11 @@ ul {
   color: var(--color-uranian-blue) !important;
 }
 
+.playwrite {
+  font-family: Playwrite_AT;
+  font-style: italic;
+}
+
 /* Mobile view */
 
 body {
@@ -72,8 +77,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: Playwrite_AT;
-  font-style: italic;
   padding: 1.5rem;
 }
 
@@ -124,6 +127,27 @@ body {
 .main-container {
   grid-area: main-container;
   overflow-y: auto;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+
+.button {
+  text-decoration: none;
+  color: var(--color-light);
+  background-color: var(--color-cornflower-blue);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0.12rem 0.1rem 0.2rem var(--color-medium);
 }
 
 #products {
@@ -209,12 +233,6 @@ body {
 .card-button {
   grid-area: card-button;
   justify-self: center;
-  text-decoration: none;
-  color: var(--color-light);
-  background-color: var(--color-cornflower-blue);
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0.12rem 0.1rem 0.2rem var(--color-medium);
 }
 
 .filter {

@@ -7,8 +7,8 @@ let menuIcon,
   currentPage = 0,
   filter = "id"
 
-const toggleMobileMenu = () => {
-  menuShown = !menuShown
+const toggleMobileMenu = (forceHideMenu) => {
+  menuShown = forceHideMenu ? false : !menuShown
   if (menuShown) {
     menuIcon.classList.add("selected")
     menu.classList.remove("hidden")
@@ -18,15 +18,20 @@ const toggleMobileMenu = () => {
   }
 }
 
-const showSection = (event) =>
+const showSection = (event) => {
   Object.entries(pages).forEach(([title, element]) => {
+    /* element => NodeList from QuerySelectorAll
+    First item (element[0]) will be menu-items
+    Other items (element[1...n]) will be from the pages */
     const isCurrentSection = event.target.className.includes(title)
     const page = document.getElementById(title)
-    element.classList.remove("selected")
+    element[0].classList.remove("selected")
     page.classList.remove("hidden")
-    if (isCurrentSection) element.classList.add("selected")
+    if (isCurrentSection) element[0].classList.add("selected")
     else page.classList.add("hidden")
   })
+  toggleMobileMenu(true)
+}
 
 const changePage = (index) => {
   currentPage = index
@@ -81,7 +86,7 @@ const populateProducts = (start, count) => {
       </div>`
           : ""
       }
-      <a href="#" class="card-button">Ver más</a>
+      <a href="#" class="card-button button">Ver más</a>
     </div>`
     )
     .join("")
@@ -92,14 +97,16 @@ document.addEventListener("DOMContentLoaded", () => {
   menuIcon = document.querySelector(".menu-icon")
   menu = document.querySelector(".menu")
   pages = {
-    home: document.querySelector(".menu-item.home"),
-    products: document.querySelector(".menu-item.products"),
-    deals: document.querySelector(".menu-item.deals"),
-    contact: document.querySelector(".menu-item.contact"),
+    home: document.querySelectorAll("button.home"),
+    products: document.querySelectorAll("button.products"),
+    deals: document.querySelectorAll("button.deals"),
+    contact: document.querySelectorAll("button.contact"),
   }
   // Add listeners
-  menuIcon.addEventListener("click", toggleMobileMenu)
-  Object.entries(pages).forEach(([_, el]) => el.addEventListener("click", showSection))
+  menuIcon.addEventListener("click", () => toggleMobileMenu(false))
+  Object.entries(pages).forEach(([_, query]) =>
+    Array.from(query).forEach((element) => element.addEventListener("click", showSection))
+  )
   document.getElementById("filter-select").addEventListener("change", (event) => {
     filter = event.target.value
     populatePages()
