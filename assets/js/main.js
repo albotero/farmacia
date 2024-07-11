@@ -1,7 +1,10 @@
+import { PRODUCTS } from "./products.js"
+
 let menuIcon,
   menu,
   menuShown = false,
-  pages
+  pages,
+  currentPage = 0
 
 const toggleMobileMenu = () => {
   menuShown = !menuShown
@@ -24,6 +27,54 @@ const showSection = (event) =>
     else page.classList.add("hidden")
   })
 
+const changePage = (index) => {
+  currentPage = index
+  populatePages()
+}
+
+const populatePages = () => {
+  const numPages = Math.ceil(PRODUCTS.length / 8)
+  const pagesDiv = document.querySelector(".pages")
+  pagesDiv.innerHTML = ""
+  new Array(numPages).fill().forEach((_, i) => {
+    const newPage = document.createElement("p")
+    newPage.innerText = i + 1
+    if (i === currentPage) {
+      newPage.classList.add("current")
+      populateProducts(currentPage * 8, 8)
+    }
+    newPage.addEventListener("click", () => changePage(i))
+    pagesDiv.appendChild(newPage)
+  })
+}
+
+const populateProducts = (start, count) => {
+  document.querySelector(".products-container").innerHTML = PRODUCTS.slice(start, start + count)
+    .map(
+      ({ id, title, desc, price, discount }) => `
+    <div class="card">
+      <img
+        src="./assets/img/medicamentos/${id}.webp"
+        alt="${title}"
+        class="card-image"
+      />
+      <h4 class="card-title">${title}</h4>
+      <p class="card-desc">${desc}</p>
+      <p class="card-price">$${(discount ? Math.round(price * (1 - discount / 100)) : price).toLocaleString()}</p>
+      ${
+        discount
+          ? `<div class="card-price-discount">
+        <p class="discount">-${discount}%</p>
+        <p class="full-price">$${price.toLocaleString()}</p>
+      </div>`
+          : ""
+      }
+      <a href="#" class="card-button">Ver más</a>
+    </div>`
+    )
+    .join("")
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Get DOM elements
   menuIcon = document.querySelector(".menu-icon")
@@ -37,4 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add listeners
   menuIcon.addEventListener("click", toggleMobileMenu)
   Object.entries(pages).forEach(([_, el]) => el.addEventListener("click", showSection))
+  // Populate products
+  populatePages()
 })
