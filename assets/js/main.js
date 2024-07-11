@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   )
   document.getElementById("filter-select").addEventListener("change", (event) => {
     filter = event.target.value
+    currentPage = 0
     populatePages()
   })
   // Populate products
