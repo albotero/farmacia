@@ -12,7 +12,7 @@ html {
   --color-cornflower-blue: #7189ffff;
   --color-royal-purple: #624cabff;
   --color-light: #f3f3f3;
-  --color-medium: #828883;
+  --color-medium: #8f9690;
   --color-dark-medium: #5c5454;
   --color-dark: #131313;
   --font-xs: 1rem;
@@ -133,6 +133,7 @@ body {
     "filter"
     "products-container"
     "pages";
+  padding: 1rem 2rem;
 }
 
 .products-container {
@@ -140,7 +141,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .card {
@@ -193,6 +194,7 @@ body {
 .card-price-discount .full-price {
   text-decoration: line-through;
   font-size: var(--font-sm);
+  font-weight: 300;
   color: var(--color-medium);
 }
 
@@ -219,7 +221,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.5rem 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 2rem;
 }
 
 #filter-select {
@@ -235,6 +237,32 @@ body {
 
 .pages {
   grid-area: pages;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pages p {
+  background-color: var(--color-light);
+  color: var(--color-dark-medium);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.2rem var(--color-medium);
+  width: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+  align-content: center;
+}
+
+.pages .current {
+  font-size: var(--font-lg);
+  padding: 0.75rem 1rem;
+  color: var(--color-dark);
+}
+
+.pages p:active {
+  background-color: var(--color-uranian-blue);
 }
 
 .footer {
