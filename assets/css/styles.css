@@ -198,6 +198,7 @@ body {
   padding-bottom: 1.5rem;
   font-family: Nunito, sans-serif;
   overflow: hidden;
+  height: fit-content;
 }
 
 .card-image {
@@ -219,17 +220,19 @@ body {
   grid-area: card-title;
   font-size: var(--font-lg);
   align-self: center;
+  font-weight: 500;
 }
 
 .card-price {
   grid-area: card-price;
   color: var(--color-dark-medium);
   font-weight: 500;
-  place-self: center end;
+  place-self: end end;
 }
 
 .two-rows {
   grid-row-end: span 2;
+  place-self: center end;
 }
 
 .card-price-discount {
@@ -434,7 +437,7 @@ body {
   }
 
   .menu-icon {
-    display: none;
+    display: none !important;
   }
 
   .menu {
@@ -498,3 +501,68 @@ body {
 }
 
 /* Large screens view */
+@media screen and (min-width: 1400px) {
+  #products .card-price,
+  #products .card-price-discount,
+  .footer,
+  #deals .full-price,
+  .info {
+    font-size: var(--font-md);
+  }
+
+  body,
+  .button,
+  .menu-item,
+  input,
+  textarea,
+  select {
+    font-size: var(--font-lg);
+  }
+
+  .social {
+    font-size: var(--font-xl);
+  }
+
+  #home h2 {
+    font-size: var(--font-2xl);
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "contact-form-title contact-form-title"
+      "contact-form-name contact-form-message"
+      "contact-form-email contact-form-message"
+      "contact-form-phone contact-form-message"
+      "contact-form-submit contact-form-submit";
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .contact-form > * {
+    width: 100%;
+  }
+
+  .contact-form-name {
+    grid-area: contact-form-name;
+  }
+
+  .contact-form-email {
+    grid-area: contact-form-email;
+  }
+
+  .contact-form-phone {
+    grid-area: contact-form-phone;
+  }
+
+  .contact-form-message {
+    grid-area: contact-form-message;
+  }
+
+  .contact-form-submit {
+    grid-area: contact-form-submit;
+    width: fit-content;
+    justify-self: center;
+  }
+}
