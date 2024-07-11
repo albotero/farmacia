@@ -30,7 +30,7 @@
     <!-- Main container - Each section will be shown with javascript -->
     <main class="main-container">
       <!-- Homepage -->
-      <section id="home">
+      <section id="home" class="section-center">
         <h2 class="playwrite">¡Bienvenid@!</h2>
         <p>
           Aquí en tu Farmacia Especial estamos para servirte con la más amplia variedad de medicamentos e insumos para
@@ -106,7 +106,32 @@
           </div>
         </div>
       </section>
-      <section id="contact" class="hidden">contact</section>
+      <section id="contact" class="hidden">
+        <form
+          action=""
+          class="contact-form section-center opacity-bg"
+          onsubmit="alert('¡Mensaje enviado!'); return false;"
+        >
+          <h2 class="playwrite">Contáctanos</h2>
+          <div class="input-group opacity-bg">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="input-group opacity-bg">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div class="input-group opacity-bg">
+            <label for="phone">Teléfono</label>
+            <input type="tel" name="phone" id="phone" required />
+          </div>
+          <div class="input-group opacity-bg">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" rows="10" required></textarea>
+          </div>
+          <button class="button" type="submit">Enviar</button>
+        </form>
+      </section>
     </main>
     <!-- Footer -->
     <footer class="footer">
