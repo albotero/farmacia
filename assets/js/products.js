@@ -26,7 +26,7 @@ export const PRODUCTS = [
   {
     id: 4,
     title: "Advil Gripa Ibuprofeno",
-    desc: "Caja x  x 10 Cápsulas",
+    desc: "Caja X 10 Cápsulas",
     price: 20500,
     discount: 10,
   },
