@@ -218,7 +218,11 @@ body {
   grid-area: card-price;
   color: var(--color-dark-medium);
   font-weight: 500;
-  justify-self: end;
+  place-self: center end;
+}
+
+.two-rows {
+  grid-row-end: span 2;
 }
 
 .card-price-discount {

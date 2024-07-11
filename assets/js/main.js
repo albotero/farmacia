@@ -78,7 +78,10 @@ const populateProducts = (start, count) => {
       />
       <h4 class="card-title">${title}</h4>
       <p class="card-desc">${desc}</p>
-      <p class="card-price">$${(discount ? Math.round(price * (1 - discount / 100)) : price).toLocaleString()}</p>
+      <p class="card-price ${discount ? "" : "two-rows"}">$${(discount
+        ? Math.round(price * (1 - discount / 100))
+        : price
+      ).toLocaleString()}</p>
       ${
         discount
           ? `<div class="card-price-discount">
