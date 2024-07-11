@@ -11,6 +11,7 @@ html {
   --color-uranian-blue: #a0ddffff;
   --color-cornflower-blue: #7189ffff;
   --color-royal-purple: #624cabff;
+  --color-highlight: #f07c4a;
   --color-light: #f3f3f3;
   --color-medium: #8f9690;
   --color-dark-medium: #5c5454;
@@ -150,14 +151,17 @@ body {
   box-shadow: 0.12rem 0.1rem 0.2rem var(--color-medium);
 }
 
-#products {
+.grid-section {
   display: grid;
   grid-template-columns: 1fr;
+  padding: 1rem 2rem;
+}
+
+#products {
   grid-template-areas:
     "filter"
     "products-container"
     "pages";
-  padding: 1rem 2rem;
 }
 
 .products-container {
@@ -174,12 +178,13 @@ body {
   border-radius: 0.5rem;
   display: grid;
   grid-template-columns: 1.2rem 1fr auto 1.2rem;
-  grid-template-rows: auto 0.7rem auto auto 0.7rem auto;
+  grid-template-rows: auto 1rem repeat(3, auto) 0.7rem auto;
   grid-template-areas:
     "card-image card-image card-image card-image"
     ". . . ."
     ". card-title card-price ."
-    ". card-desc card-price-discount ."
+    ". card-title card-price-discount ."
+    ". card-desc card-desc ."
     ". . . ."
     ". card-button card-button .";
   row-gap: 0.3rem;
@@ -195,11 +200,18 @@ body {
   box-shadow: 0.12rem 0 0.5rem var(--color-medium);
   object-fit: contain;
   background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image-zoom-out {
+  background-size: 60%;
 }
 
 .card-title {
   grid-area: card-title;
   font-size: var(--font-lg);
+  align-self: center;
 }
 
 .card-price {
@@ -207,7 +219,6 @@ body {
   color: var(--color-dark-medium);
   font-weight: 500;
   justify-self: end;
-  align-self: end;
 }
 
 .card-price-discount {
@@ -215,7 +226,7 @@ body {
   display: flex;
   gap: 0.5rem;
   font-weight: bold;
-  color: #f07c4a;
+  color: var(--color-highlight);
 }
 
 .card-price-discount .full-price {
@@ -284,6 +295,17 @@ body {
 
 .pages p:active {
   background-color: var(--color-uranian-blue);
+}
+
+.info {
+  font-size: var(--font-sm);
+}
+
+.info::before {
+  content: "*";
+  color: var(--color-highlight);
+  font-weight: 600;
+  margin-right: 0.2rem;
 }
 
 .footer {

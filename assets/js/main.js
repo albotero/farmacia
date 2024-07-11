@@ -73,6 +73,7 @@ const populateProducts = (start, count) => {
       <img
         src="./assets/img/medicamentos/${id}.webp"
         alt="${title}"
+        title="${title}"
         class="card-image"
       />
       <h4 class="card-title">${title}</h4>

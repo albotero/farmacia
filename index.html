@@ -39,7 +39,7 @@
         <p>Continúa en nuestro Buscador de Productos:</p>
         <button class="products button">Productos</button>
       </section>
-      <section id="products" class="hidden">
+      <section id="products" class="grid-section hidden">
         <!-- Products - Populated with JS -->
         <div class="products-container"></div>
         <!-- Filter -->
@@ -56,7 +56,56 @@
         <!-- Pages -->
         <aside class="pages"></aside>
       </section>
-      <section id="deals" class="hidden">deals</section>
+      <section id="deals" class="grid-section hidden">
+        <div class="products-container">
+          <div class="card">
+            <div
+              style="background-image: url('./assets/img/member-badge.webp')"
+              title="Membresía Premium"
+              class="card-image image-zoom-out"
+            ></div>
+            <h4 class="card-title">Membresía Premium</h4>
+            <p class="card-desc">
+              Disfruta de nuestras promociones exclusivas y envíos a domicilio gratuito por un precio especial.
+              <br />
+              <span class="info">Descuento por el primer mes, luego continúa al precio original.</span>
+              <br />
+              <span class="info">Válido hasta el 31 de julio de 2024.</span>
+            </p>
+            <p class="card-price">$31,250</p>
+            <div class="card-price-discount">
+              <p class="discount">-75%</p>
+              <p class="full-price">$125,000</p>
+            </div>
+            <a href="#" class="card-button button">¡Adquiérelo ya!</a>
+          </div>
+          <div class="card">
+            <div
+              style="background-image: url('./assets/img/referral-program.webp')"
+              title="Programa de Referidos"
+              class="card-image"
+            ></div>
+            <h4 class="card-title">Programa de Referidos</h4>
+            <p class="card-desc">
+              Cuéntale a todos y por cada persona que refieras y compre una membresía premium te regalamos un 5% de
+              descuento adicional en todos los productos de la Farmacia.
+              <br />
+              <span class="info">
+                Los referidos deben inscribir tu código de referidos para que este sea válido, el código lo puedes
+                encontrar al iniciar sesión en tu zona de usuario.
+              </span>
+              <br />
+              <span class="info"
+                >Descuento del 5% máximo $100.000 en la primer compra siguiente al registro del referido.</span
+              >
+              <br />
+              <span class="info">Descuento válido por una compra.</span>
+            </p>
+
+            <a href="#" class="card-button button">¡Ver mi código de referidos!</a>
+          </div>
+        </div>
+      </section>
       <section id="contact" class="hidden">contact</section>
     </main>
     <!-- Footer -->
